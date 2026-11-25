@@ -1,10 +1,7 @@
-import { useState } from 'react'
 import MainNav from './components/MainNav'
 import MobileNav from './components/MobileNav'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <div className="sm:hidden">
@@ -47,6 +44,7 @@ function App() {
           </p>
         </div>
       </section>
+
     </>
   )
 }
