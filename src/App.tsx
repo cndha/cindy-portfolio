@@ -1,119 +1,52 @@
 import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import MainNav from './components/MainNav'
+import MobileNav from './components/MobileNav'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+      <div className="sm:hidden">
+        <MobileNav />
+      </div>
+      <div className="hidden sm:block">
+        <MainNav />
+      </div>
+
+      <section className="mt-[20%] md:mt-[15%] lg:mt-[10%] mx-1 md:mx-[5%] lg:mx-[10%] flex flex-col md:flex-row justify-center">
+        <div className="md:mr-[-10%] lg:mr-0">
+          {/* <p className="text-center tracking-widest uppercase mb-2">Hey, I'm Cindy</p> */}
+          <h1 className="font-display text-[38px] md:text-[44px] xl:text-[80px] text-center md:text-left leading-[1.2] mb-1">I make the internet <span className="text-[#00945b] italic">less frustrating</span></h1>
+          <p className="text-center md:text-left font-display text-[24px] md:text-[36px] xl:text-[56px] leading-[1.2]">by building friendlier web pages, one component at a time.</p>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
+        <div className="flex justify-center md:justify-end lg:justify-center pt-[5%]">
+          <img src="/images/cindy-hero.png" className="w-[80%] lg:w-[100%]" />
+        </div>
+      </section>
+
+      <section className="mt-4">
+        <div className="flex justify-center">
+          <p
+            className="group inline-flex flex-col items-center gap-2 text-[#00945b] focus-visible:outline-2 focus-visible:outline-offset-4
+             transition-colors text-[20px] uppercase"
+          >
+            <span>Let me show you</span>
+            <svg
+              aria-hidden="true"
+              className="h-5 w-5 animate-bounce motion-reduce:animate-none"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="black"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M12 5v14M19 12l-7 7-7-7" />
+            </svg>
           </p>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
       </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
     </>
   )
 }
